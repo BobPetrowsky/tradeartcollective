@@ -1,0 +1,22 @@
+.page
+  .artist
+    .user-image= image_tag @user.image
+    .name= @user.fullname
+    .location= @user.location
+    .about
+      %p= @user.about
+  .items-container
+    -@user.items.each do |item|
+      .item{:style => "background-image: url(#{item.img});"}
+        .item-content
+          .item-name= item.name
+          .item-price= "$#{item.price}"
+          .item-description= item.description
+          - if current_user == @user
+            .item-actions
+              .edit-item= link_to "Edit Item", edit_user_item_path(current_user, item)
+              .delete-item= link_to "Delete Item", user_item_path(current_user, item), method: :delete
+
+    - if current_user == @user
+      .item
+        .add-item= link_to "Add Item", new_user_item_path(current_user)
