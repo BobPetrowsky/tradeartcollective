@@ -11,9 +11,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 
-  CLIENT_ID = 189636
-  CLIENT_SECRET = "2cde40d96b"
+  CLIENT_ID = ENV["CLIENT_ID"]
+  CLIENT_SECRET = ENV["CLIENT_SECRET"]
   USE_STAGE = true
-  WEPAY = WePay.new(CLIENT_ID, CLIENT_SECRET, USE_STAGE)
+  WEPAY = WePay.new(ENV["CLIENT_ID"], ENV["CLIENT_SECRET"], USE_STAGE)
 
 end

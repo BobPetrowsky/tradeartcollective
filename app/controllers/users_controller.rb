@@ -50,5 +50,6 @@ class UsersController < ApplicationController
     })
     @sale = Sale.create_from_wepay(response, @user, @item)
     redirect_to user_path(@user), notice: "Thanks for the payment! You should receive a confirmation email shortly."
+    ShippingMailer.item_sold_email(@sale).deliver
   end
 end

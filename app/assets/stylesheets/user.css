@@ -123,10 +123,6 @@ a {
   color: #dab222;
 }
 
-.item-content < * {
-  flex: 1;
-}
-
 .item-content {
   display: none;
 }
