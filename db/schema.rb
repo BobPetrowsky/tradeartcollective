@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008165507) do
+ActiveRecord::Schema.define(version: 20141011204938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,47 @@ ActiveRecord::Schema.define(version: 20141008165507) do
     t.text    "story"
   end
 
+  create_table "items", force: true do |t|
+    t.integer  "user_id",                     null: false
+    t.string   "img",                         null: false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "price",                       null: false
+    t.string   "name",                        null: false
+    t.boolean  "sold",        default: false
+  end
+
+  create_table "sales", force: true do |t|
+    t.integer "checkout_id",                         null: false
+    t.integer "create_time",                         null: false
+    t.string  "short_description",                   null: false
+    t.string  "long_description"
+    t.decimal "amount",                              null: false
+    t.string  "payer_name",                          null: false
+    t.integer "shipping_address_id"
+    t.boolean "shipped",             default: false
+    t.boolean "refunded",            default: false
+    t.integer "user_id",                             null: false
+    t.string  "payer_email",                         null: false
+    t.integer "item_id",                             null: false
+  end
+
+  create_table "shippings", force: true do |t|
+    t.integer "sale_id",  null: false
+    t.string  "name"
+    t.string  "address1"
+    t.string  "address2"
+    t.string  "city"
+    t.string  "state"
+    t.string  "zip"
+    t.string  "country"
+  end
+
   create_table "users", force: true do |t|
-    t.string "email", null: false
+    t.string  "email",              null: false
+    t.string  "wepay_access_token"
+    t.integer "wepay_account_id"
   end
 
 end

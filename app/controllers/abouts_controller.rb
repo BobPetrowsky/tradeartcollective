@@ -1,7 +1,7 @@
 class AboutsController < ApplicationController
   def edit
     @user = current_user
-    @about = @user.about.find(params[:id])
+    @about = About.find(params[:id])
   end
 
   def update

@@ -1,0 +1,16 @@
+- if !@user.has_valid_wepay_access_token? || !@user.has_wepay_account?
+  %p
+    Please create an account to manage your money:
+  - redirect_uri = url_for(:controller => 'users', :action => 'oauth', :user_id => @user.id, :host => request.host_with_port)
+  = link_to "Click here to create your ", @user.wepay_authorization_url(redirect_uri)
+
+
+.artist
+  .user-image= image_tag @user.about.image
+  .name= @user.about.name
+  .location= @user.about.location
+  .about
+    %p= @user.about.story
+  - if current_user == @user
+    = link_to "Edit", edit_user_about_path(@user, @user.about), method: :get, :remote => true
+= render :partial => "/items/index", :item => @item

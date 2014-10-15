@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta(charset="utf-8")
+  %body
+    %h1 Your item has been sold!
+    %div
+      %p= image_tag @sale.item.img
+      %p= @sale.item.name
+      %p= "$#{@sale.item.price}"
+      %p= @sale.item.description
+    %h1 YOU MUST SHIP WITHIN 2 WEEKS OR A REFUND WILL BE MADE.
+    %h2 Ship to:
+    %div
+      %p=@sale.shipping.name
+      %p=@sale.shipping.address1
+      %p=@sale.shipping.address2
+      %p=@sale.shipping.city
+      %p=@sale.shipping.state
+      %p=@sale.shipping.zip
+      %p=@sale.shipping.country

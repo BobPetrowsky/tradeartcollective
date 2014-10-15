@@ -12,6 +12,7 @@ gem 'money-rails'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'fog'
+gem 'wepay'
 
 group :development, :test do
   gem 'dotenv-rails'
@@ -20,4 +21,5 @@ group :development, :test do
   gem 'launchy'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'quiet_assets'
 end

@@ -1,0 +1,8 @@
+.item{:style => "background-image: url(#{@item.img});"}
+  = simple_form_for([current_user, @item], :html => {:remote => true}) do |f|
+    = f.input :name
+    = f.input :price
+    = f.input :img, as: :file, required: false
+    = f.input :description
+    = f.submit
+  = link_to "Delete Item", user_item_path(current_user, @item), method: :delete, data: { confirm: 'Are you sure?' }

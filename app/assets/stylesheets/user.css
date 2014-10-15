@@ -1,0 +1,186 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #dedfc1;
+}
+
+a {
+  text-decoration: none;
+}
+
+.page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-flow: column no-wrap;
+}
+
+.artist {
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  background-color: #981834;
+  flex: 1;
+  padding: 1%;
+}
+
+#edit_about_1 {
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  background-color: #981834;
+  flex: 1;
+  padding: 1%;
+}
+
+.user-image img {
+  border: 5px solid #18987c;
+  border-radius: 15px;
+}
+
+.name {
+  font-size: 25px;
+}
+
+#about_name {
+  font-size: 25px;
+  width: 100%;
+}
+
+.location {
+  font-size: 20px;
+}
+
+#about_location {
+  width: 100%;
+  font-size: 20px;
+}
+
+.about {
+  background-color: #dedfc1;
+  border-radius: 15px;
+  width: 99.99%;
+
+}
+
+#about_story {
+  background-color: #dedfc1;
+  border-radius: 15px;
+  width: 99.99%;
+}
+
+.about p {
+  width: 95%;
+  padding: 5%;
+}
+
+.items-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  flex: 2;
+}
+
+.item {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  background-size: 300px 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 5%;
+  background-color: #18987c;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  border: 5px solid #18987c;
+  border-radius: 15px;
+}
+
+.new-item {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  background-size: 300px;
+  margin: 5%;
+  background-color: #18987c;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  border: 5px solid #18987c;
+  border-radius: 15px;
+}
+
+.item:hover > .item-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  background-color:rgba(0,0,0,0.6);
+  border-radius: 50%;
+  color: #dab222;
+}
+
+.item-content < * {
+  flex: 1;
+}
+
+.item-content {
+  display: none;
+}
+
+.buy {
+  color: #18987c;
+}
+
+.buy:hover {
+  color: #317b76;
+}
+
+.item-name {
+  font-size: 30px;
+  margin-top: 4%;
+}
+
+#item_name {
+  font-size: 20px;
+  margin-top: 4%;
+  width: 98%;
+}
+
+.item-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#item_price {
+  font-size: 20px;
+  width: 30%;
+  margin: 4%;
+}
+
+.item-description {
+  font-size: 20px;
+  line-height: 50px;
+}
+
+#item_description {
+  width: 98%;
+
+}
+
+.item-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.add-item {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 3em;
+}
