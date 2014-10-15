@@ -13,6 +13,8 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'fog'
 gem 'wepay'
+gem 'rails_12factor'
+
 
 group :development, :test do
   gem 'dotenv-rails'
