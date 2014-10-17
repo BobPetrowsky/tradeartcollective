@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def self.create_with_omniauth(auth)
-    create! do |user|
+    User.find_or_create_by!(email: auth.info.email) do |user|
       user.email = auth.info.email
       user.name = auth.info.name
       user.image = auth.info.image
