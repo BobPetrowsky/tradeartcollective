@@ -1,6 +1,10 @@
 class ItemUploader < CarrierWave::Uploader::Base
 
-  storage :fog
+  if Rails.env.production? || Rails.env.development?
+    storage :fog
+  else
+    storage :file
+  end
 
   def pre_limit file
     if file && file.size > 0.1.megabytes
