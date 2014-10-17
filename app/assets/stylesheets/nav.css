@@ -21,7 +21,7 @@ nav ul li {
 }
 
 nav ul li a {
-  font-size: 1rem;
+  font-size: 20px;
   text-align: center;
   text-decoration: none;
   color: #18987c;
@@ -49,7 +49,7 @@ nav ul li a img:hover {
 }
 
 .brand a {
-  font-size: 2rem;
+  font-size: 4vmax;
   text-align: left;
   width: 55%;
 }

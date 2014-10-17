@@ -29,14 +29,17 @@ $( document ).ready(function() {
       }
   });
   var t = setInterval(function(){
-    $(".item-images ul").animate({marginLeft:-480},1000,function(){
-      $(this).find("li:last").after($(this).find("li:first"));
-      $(this).css({marginLeft:0});
-    })
+    if ($(".item-images ul li").length > 1) {
+      $(".item-images ul").animate({marginLeft:-480},1000,function(){
+        $(this).find("li:last").after($(this).find("li:first"));
+        $(this).css({marginLeft:0});
+      })
+    }
   },5000);
+
   $( document ).on("mouseover", function() {
     $( ".exit" ).on("click", function() {
-      $(".item-container").hide();
+      $(".item-container").remove();
     });
   });
 });

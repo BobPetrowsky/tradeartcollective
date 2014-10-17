@@ -1,3 +1,4 @@
+require 'file_size_validator'
 class User < ActiveRecord::Base
   has_many :items
   has_many :sales
@@ -5,6 +6,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :name, presence: true
   validates :image, presence: true
+  validates_size_of :video, maximum: 35.megabytes, message: "should be less than 35MB"
 
   mount_uploader :video, ItemUploader
   mount_uploader :background, ItemUploader

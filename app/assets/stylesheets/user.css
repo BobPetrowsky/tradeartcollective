@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   width: 100%;
   background-color: transparent;
+  font-family: 'Amatic SC', cursive;
 }
 
 a {
@@ -64,21 +65,21 @@ a {
 }
 
 .name {
-  font-size: 25px;
+  font-size: 4vmax;
 }
 
 #user_name {
-  font-size: 25px;
+  font-size: 4vmax;
   width: 100%;
 }
 
 .location {
-  font-size: 20px;
+  font-size: 3vmax;
 }
 
 #user_location {
   width: 100%;
-  font-size: 20px;
+  font-size: 3vmax;
 }
 
 .about {
@@ -95,6 +96,7 @@ a {
 .about p {
   width: 95%;
   padding: 5%;
+  font-size: 30px;
 }
 
 .items-container {
@@ -128,7 +130,7 @@ a {
   min-width: 100%;
   min-height: 100%;
   margin-left: -10%;
-  position: fixed;
+  position: absolute;
   margin-top: -90px;
 }
 
@@ -198,6 +200,7 @@ a {
 }
 
 .buy {
+  font-size: 50px;
   color: #18987c;
 }
 
