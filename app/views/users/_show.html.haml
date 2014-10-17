@@ -6,11 +6,11 @@
 
 
 .artist
-  .user-image= image_tag @user.about.image
-  .name= @user.about.name
-  .location= @user.about.location
+  .user-image= image_tag @user.image
+  .name= @user.name
+  .location= @user.location
   .about
-    %p= @user.about.story
+    %p= @user.story
   - if current_user == @user
-    = link_to "Edit", edit_user_about_path(@user, @user.about), method: :get, :remote => true
+    = link_to "Edit", edit_user_path(@user), method: :get, :remote => true
 = render :partial => "/items/index", :item => @item

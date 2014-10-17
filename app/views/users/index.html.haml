@@ -2,4 +2,4 @@
 
 .users-container
   - @users.each do |user|
-    .user-name= link_to user.about.name, user_path(user)
+    .user-name= link_to user.name, user_path(user)

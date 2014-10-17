@@ -1,7 +1,0 @@
-.item{:style => "background-image: url(#{@item.img});"}
-  = simple_form_for([current_user, Item.new], :html => {:remote => true}) do |f|
-    = f.input :name
-    = f.input :price
-    = f.input :img, as: :file
-    = f.input :description
-    = f.submit

@@ -1,7 +1,0 @@
-.user-image= image_tag @user.about.image
-
-= simple_form_for([current_user, @about]) do |f|
-    = f.input :name
-    = f.input :location
-    = f.input :story
-    = f.submit

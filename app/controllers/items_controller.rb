@@ -3,6 +3,15 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def index
+    @items = Item.all
+  end
+
+  def show
+    @item = Item.find(params[:id])
+    @user = User.find(params[:user_id])
+  end
+
   def create
     @user = User.find(params[:user_id])
     @item = @user.items.new(item_params)

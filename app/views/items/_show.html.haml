@@ -1,0 +1,11 @@
+.item-container
+  %button.exit X
+  %h1= @item.name
+  .item-images
+    %ul
+      %li= image_tag @item.img
+      %li= image_tag @item.img
+  .item-price= "$#{@item.price}"
+  - if @user.has_wepay_account? && current_user != @user
+    .buy= link_to "Buy", "/users/#{@user.id}/#{@item.id}/buy", :class => "buy"
+  .item-description= @item.description

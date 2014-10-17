@@ -1,0 +1,8 @@
+.artist
+  .user-image= image_tag @user.image
+  .name= @user.name
+  .location= @user.location
+  .about
+    %p= @user.story
+  - if current_user == @user
+    = link_to "Edit", edit_user_path(@user), method: :get, :remote => true

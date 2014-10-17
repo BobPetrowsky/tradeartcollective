@@ -1,9 +1,13 @@
 class User < ActiveRecord::Base
-  has_one :about
   has_many :items
   has_many :sales
 
   validates :email, presence: true
+  validates :name, presence: true
+  validates :image, presence: true
+
+  mount_uploader :video, ItemUploader
+  mount_uploader :background, ItemUploader
 
   def has_items_for_sale?
     items.each do |item|
@@ -18,15 +22,14 @@ class User < ActiveRecord::Base
   def self.create_with_omniauth(auth)
     create! do |user|
       user.email = auth.info.email
-      user.about = About.new({name: auth.info.name,
-        image: auth.info.image,
-        location: auth.info.location
-      })
+      user.name = auth.info.name
+      user.image = auth.info.image
+      user.location = auth.info.location
     end
   end
 
   def wepay_authorization_url(redirect_uri)
-    TradeArtCollective::Application::WEPAY.oauth2_authorize_url(redirect_uri, self.email, self.about.name)
+    TradeArtCollective::Application::WEPAY.oauth2_authorize_url(redirect_uri, self.email, self.name)
   end
 
   # takes a code returned by wepay oauth2 authorization and makes an api call to generate oauth2 token for this user.
@@ -79,7 +82,7 @@ class User < ActiveRecord::Base
   # creates a WePay account for this user with the farm's name
   def create_wepay_account
     if self.has_wepay_access_token? && !self.has_wepay_account?
-      params = { :name => self.about.name, :description => "Member of the Trade Art Collective"}
+      params = { :name => self.name, :description => "Member of the Trade Art Collective"}
       response = TradeArtCollective::Application::WEPAY.call("/account/create", self.wepay_access_token, params)
 
       if response["account_id"]
@@ -93,3 +96,4 @@ class User < ActiveRecord::Base
     raise "Error - cannot create WePay account"
   end
 end
+

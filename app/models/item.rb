@@ -26,7 +26,7 @@ class Item < ActiveRecord::Base
 
     params = {
       :account_id => self.user.wepay_account_id,
-      :short_description => "#{self.name} sold by #{self.user.about.name}",
+      :short_description => "#{self.name} sold by #{self.user.name}",
       :long_description => "#{self.description}",
       :type => :GOODS,
       :amount => price,

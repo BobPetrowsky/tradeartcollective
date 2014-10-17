@@ -8,8 +8,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def checkouts
-    @user.checkouts
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:notice] = 'Updated'
+      redirect_to @user
+    else
+      flash[:notice] = 'Could not update.'
+      render :show
+    end
   end
 
   # GET /users/oauth/1
@@ -51,5 +62,11 @@ class UsersController < ApplicationController
     @sale = Sale.create_from_wepay(response, @user, @item)
     redirect_to user_path(@user), notice: "Thanks for the payment! You should receive a confirmation email shortly."
     ShippingMailer.item_sold_email(@sale).deliver
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :location, :image, :story, :video, :background, :border)
   end
 end

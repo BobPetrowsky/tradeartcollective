@@ -14,7 +14,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'wepay'
 gem 'rails_12factor'
-
+gem "remotipart", "~> 1.0"
 
 group :development, :test do
   gem 'dotenv-rails'

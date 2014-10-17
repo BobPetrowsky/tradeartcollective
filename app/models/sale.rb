@@ -8,7 +8,6 @@ class Sale < ActiveRecord::Base
   validates :checkout_id, presence: true
   validates :create_time, presence: true
   validates :short_description, presence: true
-  validates :long_description, presence: true
   validates :amount, presence: true
   validates :payer_name, presence: true
 

@@ -11,17 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011204938) do
+ActiveRecord::Schema.define(version: 20141016195954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "abouts", force: true do |t|
-    t.integer "user_id",  null: false
-    t.string  "name",     null: false
-    t.string  "location"
-    t.string  "image",    null: false
-    t.text    "story"
+  create_table "item_images", force: true do |t|
+    t.integer "item_id", null: false
+    t.string  "image",   null: false
   end
 
   create_table "items", force: true do |t|
@@ -65,6 +62,13 @@ ActiveRecord::Schema.define(version: 20141011204938) do
     t.string  "email",              null: false
     t.string  "wepay_access_token"
     t.integer "wepay_account_id"
+    t.string  "name",               null: false
+    t.string  "location"
+    t.string  "image",              null: false
+    t.text    "story"
+    t.string  "video"
+    t.string  "background"
+    t.string  "border"
   end
 
 end
