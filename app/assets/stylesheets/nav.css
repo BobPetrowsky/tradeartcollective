@@ -51,7 +51,8 @@ nav ul li a img:hover {
 .brand a {
   font-size: 4vmax;
   text-align: left;
-  width: 55%;
+  width: 75%;
+  text-shadow: 1px 2px #ff0000;
 }
 
 .brand a:hover {

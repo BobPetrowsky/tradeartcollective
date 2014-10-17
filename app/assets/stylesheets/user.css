@@ -5,6 +5,37 @@ html, body {
   font-family: 'Amatic SC', cursive;
 }
 
+.landing-vid {
+  margin-left: -25%;
+  width: 150%;
+  height: 120%;
+  overflow: hidden;
+  margin-top: -10%;
+  z-index: -1;
+  position: fixed;
+}
+
+.landing {
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: center;
+ margin-top: 10%;
+ margin-left: 25%;
+ background-color: rgba(0,0,0,0.5);
+ width: 50%;
+ border-radius: 15px;
+ color: #18987c;
+}
+
+.landing h1 {
+  font-size: 4vmax;
+}
+
+.landing p {
+  font-size: 30px;
+}
+
+
 a {
   text-decoration: none;
 }
