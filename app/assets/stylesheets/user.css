@@ -19,12 +19,15 @@ html, body {
  display: flex;
  flex-flow: row wrap;
  justify-content: center;
- margin-top: 10%;
+ margin-top: 5%;
  margin-left: 25%;
  background-color: rgba(0,0,0,0.5);
  width: 50%;
  border-radius: 15px;
  color: #18987c;
+ padding: 1%;
+ padding-bottom: -2%;
+
 }
 
 .landing h1 {
