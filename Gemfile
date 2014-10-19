@@ -13,8 +13,8 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'fog'
 gem 'wepay'
-gem 'rails_12factor'
-gem "autoprefixer-rails"
+gem 'rails_12factor', group: :production
+gem "autoprefixer-rails", group: :all
 
 group :development, :test do
   gem 'dotenv-rails'
