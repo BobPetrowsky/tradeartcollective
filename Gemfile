@@ -14,7 +14,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'wepay'
 gem 'rails_12factor'
-gem "autoprefixer-rails"
+gem "autoprefixer-rails", :group => :all
 
 group :development, :test do
   gem 'dotenv-rails'
