@@ -4,22 +4,24 @@ html, body {
   background-color: transparent;
   font-family: 'Amatic SC', cursive;
 }
-
 .landing-vid {
-  margin-left: -25%;
-  width: 150%;
-  height: 120%;
-  overflow: hidden;
-  margin-top: -10%;
-  z-index: -1;
   position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-color: lightblue;
+  background-size: cover;
 }
 
 .landing {
  display: flex;
  flex-flow: row wrap;
  justify-content: center;
- margin-top: 5%;
+ margin-top: 10%;
  margin-left: 25%;
  background-color: rgba(0,0,0,0.5);
  width: 50%;
@@ -27,7 +29,7 @@ html, body {
  color: #18987c;
  padding: 1%;
  padding-bottom: -2%;
-
+ height: 50%;
 }
 
 .landing h1 {
@@ -36,11 +38,17 @@ html, body {
 
 .landing p {
   font-size: 30px;
+  margin-top: 0%;
 }
 
 
 a {
   text-decoration: none;
+  color: #18987c;
+}
+
+a:hover {
+  color: #317b76;
 }
 
 .notice {
@@ -77,20 +85,10 @@ a {
   justify-content: space-around;
   flex-direction: column;
   text-align: center;
-  background-color: #981834;
   flex: 1;
   padding: 1%;
   background-size: cover;
   background-position: center;
-}
-
-#edit_user_1 {
-  justify-content: space-around;
-  flex-direction: column;
-  text-align: center;
-  background-color: #981834;
-  flex: 1;
-  padding: 1%;
 }
 
 .user-image img {
@@ -159,13 +157,25 @@ a {
   overflow: hidden;
 }
 
-.video {
+/*.video {
   z-index: -1;
   min-width: 100%;
   min-height: 100%;
   margin-left: -10%;
   position: absolute;
   margin-top: -90px;
+}*/
+.video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-color: lightblue;
+  background-size: cover;
 }
 
 .item-images {
@@ -181,12 +191,15 @@ a {
 }
 
 .item-images ul li {
-  margin-left: 200px;
-  width: 480px;
+  margin-left: 275px;
   text-align: center;
-  height: 280px;
   list-style: none;
   float: left;
+  width: 300px;
+  height: 300px;
+  background-size: 300px 300px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .item {
@@ -243,8 +256,12 @@ a {
 }
 
 .item-name {
-  font-size: 30px;
+  font-size: 35px;
   margin-top: 4%;
+}
+
+.item-name2 {
+  font-size: 50px;
 }
 
 #item_name {
@@ -254,7 +271,7 @@ a {
 }
 
 .item-price {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -264,14 +281,17 @@ a {
   margin: 4%;
 }
 
+.view {
+  font-size: 35px;
+}
+
 .item-description {
-  font-size: 20px;
-  line-height: 50px;
+  font-size: 25px;
+  margin-bottom: 5%;
 }
 
 #item_description {
   width: 98%;
-
 }
 
 .item-actions {
@@ -286,4 +306,54 @@ a {
   flex-direction: column;
   justify-content: center;
   font-size: 3em;
+}
+
+.add-item a {
+  width: 100%;
+  height: 100%;
+  line-height: 300px;
+}
+
+.header {
+  text-align: center;
+  font-size: 50px;
+  color: #dab222;
+}
+
+.link-to-artist {
+  width: 100%;
+  height: 100%;
+}
+
+.link-to-artist a {
+  font-size: 25px;
+  width: 100%;
+  height: 100%;
+}
+
+.buy-container {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+}
+
+.buy-container h1 {
+  color: #dab222;
+}
+
+.sale-container {
+  margin-bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.sale {
+  border: 5px solid black;
+  width: 25%;
+  margin-left: 37%;
+  font-size: 30px;
+  background-color: lightblue;
 }

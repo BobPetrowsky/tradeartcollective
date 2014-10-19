@@ -1,5 +1,5 @@
-<h1>Buy <%= @item.name %> from <%= @user.name %> for <%= number_to_currency(@item.price, :unit => "$") %></h1>
-<p><%= link_to "← back to " + @user.name, @user %></p>
+<div class="buy-container">
+  <h1>Buy <%= @item.name %> from <%= @user.name %> for <%= number_to_currency(@item.price, :unit => "$") %></h1>
 
   <div id="wepay-iframe-div">
     <script type="text/javascript" src="https://www.wepay.com/js/iframe.wepay.js">
@@ -9,3 +9,5 @@
       WePay.iframe_checkout("wepay-iframe-div", "<%= @checkout['checkout_uri'] %>");
     </script>
   </div>
+  <p><%= link_to "← back to " + @user.name, @user %></p>
+</div>

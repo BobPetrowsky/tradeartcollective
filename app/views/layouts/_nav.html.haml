@@ -1,13 +1,29 @@
 %nav
   %ul
-    %li.brand= link_to "Trade Art Collective", root_path
-    %li= link_to "Browse Artists", users_path
-    %li= link_to "Browse Art", items_path
-    - if current_user
-      %li= link_to "My Shop", user_path(current_user)
-      %li= link_to "My Sales", user_sales_path(current_user)
-      %li= link_to "Sign Out", signout_path
+    - if on_page
+      %li.brand= link_to "Trade Art Collective", root_path, remote: true
+      %li= link_to "Browse Artists", users_path, remote: true
+      %li= link_to "Browse Art", items_path, remote: true
+
+      - if current_user
+        %li= link_to "My Shop", user_path(current_user)
+        %li= link_to "My Sales", user_sales_path(current_user)
+        %li= link_to "Sign Out", signout_path
+      - else
+        %li
+          = link_to "Sign in", "/auth/facebook"
+          = link_to image_tag("facebook.png"), "/auth/facebook"
+
     - else
-      %li
-        = link_to "Sign in", "/auth/facebook"
-        = link_to image_tag("facebook.png"), "/auth/facebook"
+      %li.brand= link_to "Trade Art Collective", root_path
+      %li= link_to "Browse Artists", users_path
+      %li= link_to "Browse Art", items_path
+
+      - if current_user
+        %li= link_to "My Shop", user_path(current_user)
+        %li= link_to "My Sales", user_sales_path(current_user)
+        %li= link_to "Sign Out", signout_path
+      - else
+        %li
+          = link_to "Sign in", "/auth/facebook"
+          = link_to image_tag("facebook.png"), "/auth/facebook"

@@ -1,30 +1,33 @@
-%h1 Sales
+.page
+  .sale-container
+    .header Sales
 
-- @sales.each do |sale|
-  .create_time= "Sold at: #{sale.create_time}"
-  .short_description="Description: #{sale.short_description}"
-  .long_description="Item Description: #{sale.long_description}"
-  .amount="Sold for: #{sale.amount}"
-  .payer_name="Sold to: #{sale.payer_name}"
-  %h2 Shipping address
-  .shipping_address
-    ="#{sale.shipping.name}"
-    ="#{sale.shipping.address1}"
-    ="#{sale.shipping.address2}"
-    ="#{sale.shipping.city}"
-    ="#{sale.shipping.state}"
-    ="#{sale.shipping.zip}"
-    ="#{sale.shipping.country}"
-  .action-links
-    - if sale.shipped == false
-      = link_to 'Mark as shipped!', mark_as_shipped_path(sale_id: sale.id), method: :put
-    - else
-      %h4 Shipped!
-    - if sale.refunded == false
-      = link_to 'Refund payment', refund_payment_path(sale_id: sale.id), method: :put
-    - else
-      %h4 Refunded!
-      - if sale.item.sold == true
-        = link_to 'Relist Item', relist_item_path(item_id: sale.item), method: :put
-      - else
-        %h4 Relisted!
+    - @sales.each do |sale|
+      .sale
+        .create_time= "Sold at: #{sale.create_time}"
+        .short_description="Description: #{sale.short_description}"
+        .long_description="Item Description: #{sale.long_description}"
+        .amount="Sold for: #{sale.amount}"
+        .payer_name="Sold to: #{sale.payer_name}"
+        %h2 Shipping address
+        .shipping_address
+          ="#{sale.shipping.name}"
+          ="#{sale.shipping.address1}"
+          ="#{sale.shipping.address2}"
+          ="#{sale.shipping.city}"
+          ="#{sale.shipping.state}"
+          ="#{sale.shipping.zip}"
+          ="#{sale.shipping.country}"
+        .action-links
+          - if sale.shipped == false && sale.refunded == false
+            = link_to 'Mark as shipped!', mark_as_shipped_path(sale_id: sale.id), method: :put
+          - elsif sale.shipped == true
+            %h4 Shipped!
+          - if sale.refunded == false
+            = link_to 'Refund payment', refund_payment_path(sale_id: sale.id), method: :put
+          - else
+            %h4 Refunded!
+            - if sale.item.sold == true
+              = link_to 'Relist Item', relist_item_path(item_id: sale.item), method: :put
+            - else
+              %h4 Relisted!

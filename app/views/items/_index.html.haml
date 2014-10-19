@@ -1,20 +1,9 @@
-.items-container
-  %video.video{:width => 400, :height => 400, :autoplay => true, :loop => true, :muted => true}
-    %source{:src => "#{@user.video}", :type => 'video/mp4'}
-  - if @user.has_items_for_sale? == true
-    -@user.items.each do |item|
-      -if item.sold != true
-        .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
-          .item-content
-            .item-name= item.name
-            .item-price
-              = "$#{item.price}"
-              .item-description= link_to "View details", user_item_path(@user, item), :remote => true
-            - if current_user == @user
-              .item-actions
-                .edit-item= link_to "Edit Item", edit_user_item_path(current_user, item), method: :get, :remote => true, :class => "edit"
-  - elsif @user != current_user
-    %h1= "#{@user.name} does not currently have any items for sale!"
-  - if current_user == @user
-    .new-item
-      .add-item= link_to "Add Item", new_user_item_path(current_user), method: :get, :remote => true
+.page
+  .item-index
+    -@items.each do |item|
+      .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
+        .item-content
+          .item-name= item.name
+          .item-price
+            = "$#{item.price}"
+            .item-description= link_to "View The Artist", user_path(item.user)

@@ -1,8 +1,9 @@
-.item-index
-  -@items.each do |item|
-    .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
-      .item-content
-        .item-name= item.name
-        .item-price
-          = "$#{item.price}"
-          .item-description= link_to "View details", user_path(item.user)
+.page
+  .item-index
+    -@items.each do |item|
+      .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
+        .item-content
+          .item-name= item.name
+          .item-price
+            = "$#{item.price}"
+            .item-description= link_to "View The Artist", user_path(item.user)
