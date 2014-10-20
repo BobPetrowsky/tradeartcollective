@@ -97,7 +97,7 @@ a:hover {
 }
 
 .name {
-  border-radius: 15px;
+  border-radius: 15px 15px 0px 0px;
   background: rgba(255,255,255, 0.9);
   font-size: 4vmax;
 }
@@ -108,7 +108,7 @@ a:hover {
 }
 
 .location {
-  border-radius: 15px;
+  border-radius: 0px 0px 15px 15px;
   background: rgba(255,255,255, 0.9);
   font-size: 3vmax;
 }
