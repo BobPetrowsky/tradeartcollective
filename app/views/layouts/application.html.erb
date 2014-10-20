@@ -11,9 +11,11 @@
   <body>
     <div class="notice"><%= notice %></div>
     <div class="notice"><%= alert %></div>
-    <video class="landing-vid", width="400", height="400", autoplay="true", loop="true", muted="true">
-      <source src="video/vid.mp4", type='video/mp4'>
-    </video>
+    <% if on_page %>
+      <video class="landing-vid", width="400", height="400", autoplay="true", loop="true", muted="true">
+        <source src="video/vid.mp4", type='video/mp4'>
+      </video>
+    <% end %>
     <%= render 'layouts/nav' %>
     <%= yield %>
   </body>
