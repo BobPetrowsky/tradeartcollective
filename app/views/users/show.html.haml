@@ -6,6 +6,8 @@
     = link_to "Click here to create your ", @user.wepay_authorization_url(redirect_uri)
 
 .page
+  #bg
+    %img(src="#{@user.background}" alt="")
   #artist
     .user-image= image_tag @user.image
     .name= @user.name
