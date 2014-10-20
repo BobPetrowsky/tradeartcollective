@@ -4,8 +4,6 @@
   .item-images
     %ul
       %li{ :style => "background-image: url(#{@item.img});" }
-      %li{ :style => "background-image: url(#{@item.img});" }
-      %li{ :style => "background-image: url(#{@item.img});" }
   .item-price= "$#{@item.price}"
   - if @user.has_wepay_account? && current_user != @user
     .buy= link_to "Buy", "/users/#{@user.id}/#{@item.id}/buy", :class => "buy"

@@ -97,6 +97,7 @@ a:hover {
 }
 
 .name {
+  background: rgba(255,255,255, 0.9);
   font-size: 4vmax;
 }
 
@@ -106,6 +107,7 @@ a:hover {
 }
 
 .location {
+  background: rgba(255,255,255, 0.9);
   font-size: 3vmax;
 }
 
@@ -115,6 +117,7 @@ a:hover {
 }
 
 .about {
+  background: rgba(255,255,255, 0.9);
   border-radius: 15px;
   width: 99.99%;
 
