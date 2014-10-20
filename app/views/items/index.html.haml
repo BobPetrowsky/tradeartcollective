@@ -1,6 +1,6 @@
 .page
   .item-index
-    -@items.each do |item|
+    -@items.shuffle.each do |item|
       .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
         .item-content
           .item-name= item.name
