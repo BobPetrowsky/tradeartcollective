@@ -81,7 +81,7 @@ a:hover {
   margin: 5px;
 }
 
-.artist {
+#artist {
   justify-content: space-around;
   flex-direction: column;
   text-align: center;
@@ -136,7 +136,7 @@ a:hover {
   font-size: 30px;
 }
 
-.items-container {
+#items-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -145,7 +145,7 @@ a:hover {
   flex: 2;
 }
 
-.item-container {
+#item-container {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
@@ -162,14 +162,6 @@ a:hover {
   overflow: hidden;
 }
 
-/*.video {
-  z-index: -1;
-  min-width: 100%;
-  min-height: 100%;
-  margin-left: -10%;
-  position: absolute;
-  margin-top: -90px;
-}*/
 .video {
   position: fixed;
   right: 0;
@@ -362,3 +354,64 @@ a:hover {
   font-size: 30px;
   background-color: lightblue;
 }
+
+nav {
+  width: 100%;
+  margin-top: 0;
+  height: 90px;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+}
+
+nav ul li {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+nav ul li a {
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #18987c;
+}
+
+nav ul li a:hover {
+  color: #317b76;
+}
+
+nav ul li a img {
+  height: 50px;
+  width: 50px;
+  border-radius: 15px;
+  background-color: #18987c;
+}
+
+nav ul li a img:hover {
+  background-color: #317b76;
+  border-radius: 15px;
+}
+
+.brand {
+  flex: 3;
+  padding-left: 4vmax;
+}
+
+.brand a {
+  font-size: 4vmax;
+  text-align: left;
+  width: 75%;
+  text-shadow: 1px 2px #ff0000;
+}
+
+.brand a:hover {
+  color: #317b76;
+}
+

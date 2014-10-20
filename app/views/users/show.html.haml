@@ -6,7 +6,7 @@
     = link_to "Click here to create your ", @user.wepay_authorization_url(redirect_uri)
 
 .page
-  .artist{:style => "background-image: url(#{@user.background});"}
+  #artist
     .user-image= image_tag @user.image
     .name= @user.name
     .location= @user.location

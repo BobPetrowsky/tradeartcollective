@@ -1,6 +1,5 @@
-.items-container
-  %video.video{:width => 400, :height => 400, :autoplay => true, :loop => true, :muted => true}
-    %source{:src => "#{@user.video}", :type => 'video/mp4'}
+#items-container
+  .video{:style => "background: url(#{@user.background}) no-repeat center center fixed;"}
   - if @user.has_items_for_sale? == true
     -@user.items.each do |item|
       -if item.sold != true

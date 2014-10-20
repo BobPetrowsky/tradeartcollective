@@ -1,10 +1,9 @@
-.artist{:style => "background-image: url(#{@user.background});"}
+#artist
   .user-image= image_tag @user.image
 
   = simple_form_for(current_user) do |f|
     = f.input :name
     = f.input :location
     = f.input :story
-    = f.input :video, as: :file, required: false, label: "Background Video"
     = f.input :background, as: :file, required: false, label: "Background Photo"
     = f.submit
