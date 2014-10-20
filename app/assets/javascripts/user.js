@@ -14,10 +14,6 @@ $( document ).ready(function() {
           "position": "fixed",
           "margin-top": "-90px"
         });
-        if ($(".notice").length == 1) {
-          $(".artist").css("margin-top", "-106px")
-          $(".item-container").css("margin-top", "-106px")
-        }
       }
       if ((scroll <= 90) && $(".artist").css("position") == "fixed") {
         $(".artist").css({
