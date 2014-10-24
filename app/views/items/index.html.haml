@@ -1,7 +1,7 @@
 .page
   .item-index
     -@items.shuffle.each do |item|
-      -if item.sold == false do
+      -if item.sold == false
         .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
           .item-content
             .item-name= item.name
