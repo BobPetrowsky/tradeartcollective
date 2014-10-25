@@ -4,10 +4,10 @@
 
     - @sales.each do |sale|
       .sale
-        .create_time= "Sold at: #{sale.create_time}"
+        .create_time= "Sold at: #{Time.at(sale.create_time).strftime("%m/%d/%Y")}"
         .short_description="Description: #{sale.short_description}"
         .long_description="Item Description: #{sale.long_description}"
-        .amount="Sold for: #{sale.amount}"
+        .amount="Sold for: $#{sale.amount}"
         .payer_name="Sold to: #{sale.payer_name}"
         %h2 Shipping address
         .shipping_address
