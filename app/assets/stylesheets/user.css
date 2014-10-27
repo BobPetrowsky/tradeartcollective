@@ -19,8 +19,11 @@ html, body {
 
 .landing {
  display: flex;
+ display: -webkit-flex;
  flex-flow: row wrap;
+ -webkit-flex-flow: row wrap;
  justify-content: center;
+ -webkit-justify-content: center;
  margin-top: 10%;
  margin-left: 25%;
  background-color: rgba(0,0,0,0.5);
@@ -58,9 +61,11 @@ a:hover {
 
 .page {
   display: flex;
+  display: -webkit-flex;
   height: 100%;
   width: 100%;
   flex-flow: column no-wrap;
+  -webkit-flex-flow: column no-wrap;
 }
 
 .exit {
@@ -73,8 +78,11 @@ a:hover {
 
 .item-index {
   display: flex;
+  display: -webkit-flex;
   flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
   justify-content: center;
+  -webkit-justify-content: center;
 }
 
 .item-index .item {
@@ -83,9 +91,12 @@ a:hover {
 
 #artist {
   justify-content: space-around;
+  -webkit-justify-content: space-around;
   flex-direction: column;
+  -webkit-flex-direction: column;
   text-align: center;
   flex: 1;
+  -webkit-flex: 1;
   padding: 1%;
   background-size: cover;
   background-position: center;
@@ -138,20 +149,28 @@ a:hover {
 
 #items-container {
   display: flex;
+  display: -webkit-flex;
   flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   margin: 0;
   padding: 0;
   flex: 2;
+  -webkit-flex: 2;
 }
 
 #item-container {
   display: flex;
+  display: -webkit-flex;
   flex-flow: column wrap;
+  -webkit-flex-flow: column wrap;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   margin: 0;
   padding: 0;
   flex: 2;
+  -webkit-flex: 2;
   width: 65.30%;
   height: 100%;
   z-index: 1000;
@@ -216,6 +235,7 @@ a:hover {
 
 .item {
   display: flex;
+  display: -webkit-flex;
   width: 300px;
   height: 300px;
   background-size: 300px 300px;
@@ -224,7 +244,9 @@ a:hover {
   margin: 5%;
   background-color: #18987c;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   flex-direction: column;
+  -webkit-flex-direction: column;
   text-align: center;
   border: 5px solid #18987c;
   border-radius: 15px;
@@ -232,13 +254,16 @@ a:hover {
 
 .new-item {
   display: flex;
+  display: -webkit-flex;
   width: 300px;
   height: 300px;
   background-size: 300px;
   margin: 5%;
   background-color: #18987c;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   flex-direction: column;
+  -webkit-flex-direction: column;
   text-align: center;
   border: 5px solid #18987c;
   border-radius: 15px;
@@ -246,8 +271,11 @@ a:hover {
 
 .item:hover > .item-content {
   display: flex;
+  display: -webkit-flex;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   flex-direction: column;
+  -webkit-flex-direction: column;
   height: 100%;
   background-color: rgba(0,0,0,0.6);
   border-radius: 50%;
@@ -308,15 +336,20 @@ a:hover {
 
 .item-actions {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
 }
 
 .add-item {
   display: flex;
+  display: -webkit-flex;
   height: 100%;
   width: 100%;
   flex-direction: column;
+  -webkit-flex-direction: column;
   justify-content: center;
+  -webkit-justify-content: center;
   font-size: 3em;
 }
 
@@ -379,15 +412,20 @@ nav {
 
 nav ul {
   display: flex;
+  display: -webkit-flex;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   height: 90px;
 }
 
 nav ul li {
   padding: 1rem;
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   justify-content: center;
+  -webkit-justify-content: center;
   flex: 1;
 }
 
@@ -416,6 +454,7 @@ nav ul li a img:hover {
 
 .brand {
   flex: 3;
+  -webkit-flex: 3;
   padding-left: 4vmax;
 }
 
