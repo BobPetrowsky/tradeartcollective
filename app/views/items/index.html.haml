@@ -7,4 +7,4 @@
             .item-name= item.name
             .item-price
               = "$#{item.price}"
-              .item-description= link_to "View The Artist", user_path(item.user)
+              .item-description= link_to "By #{item.user.name}", user_path(item.user)
