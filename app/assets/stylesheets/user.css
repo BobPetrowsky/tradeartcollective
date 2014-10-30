@@ -9,7 +9,7 @@ html, body {
   right: 0;
   bottom: 0;
   min-width: 100%;
-  min-height: 100%;
+  min-height: 110%;
   width: auto;
   height: auto;
   z-index: -100;
@@ -20,30 +20,42 @@ html, body {
 .landing {
  display: flex;
  display: -webkit-flex;
- flex-flow: row wrap;
- -webkit-flex-flow: row wrap;
+ flex-flow: column wrap;
+ -webkit-flex-flow: column wrap;
  justify-content: center;
  -webkit-justify-content: center;
- margin-top: 10%;
+ text-align: center;
+ margin-top: 0;
  margin-left: 25%;
- background-color: rgba(0,0,0,0.5);
+ margin-bottom: 0;
  width: 50%;
  border-radius: 15px;
  color: #18987c;
  padding: 1%;
- padding-bottom: -2%;
- height: 50%;
+ height: 100%;
 }
 
 .landing h1 {
-  font-size: 4vmax;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 4em;
+
 }
 
 .landing p {
+  text-align: left;
   font-size: 30px;
   margin-top: 0%;
+  padding: 1%;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,0.5);
 }
 
+#p2 {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
 
 a {
   text-decoration: none;
