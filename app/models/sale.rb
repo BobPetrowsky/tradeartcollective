@@ -11,6 +11,26 @@ class Sale < ActiveRecord::Base
   validates :amount, presence: true
   validates :payer_name, presence: true
 
+  def self.total(sales)
+    amount = 0
+    sales.each do |sale|
+      if sale.refunded == false
+        amount += sale.amount
+      end
+    end
+    amount
+  end
+
+  def self.sold_to(sales)
+    places = []
+    sales.each do |sale|
+      if sale.refunded == false
+        places << sale.shipping.state if !places.include?(sale.shipping.state)
+      end
+    end
+    places.join(",")
+  end
+
   def self.create_from_wepay(response, user, item)
     create! do |sale|
       sale.user = user
