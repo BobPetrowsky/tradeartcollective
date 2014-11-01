@@ -6,7 +6,10 @@
           .item-content
             .item-name= item.name
             %hr
-            .view= link_to "View details", user_item_path(@user, item), :remote => true
+            -if @user != current_user
+              .view2= link_to "View details", user_item_path(@user, item), :remote => true
+            -else
+              .view= link_to "View details", user_item_path(@user, item), :remote => true
             - if current_user == @user
               .item-actions
                 .edit-item= link_to "Edit Item", edit_user_item_path(current_user, item), method: :get, :remote => true, :class => "edit"
