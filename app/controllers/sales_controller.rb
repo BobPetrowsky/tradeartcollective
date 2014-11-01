@@ -2,7 +2,6 @@ class SalesController < ApplicationController
 
   def index
     @user = current_user
-    @sales = @user.sales
   end
 
   def mark_as_shipped

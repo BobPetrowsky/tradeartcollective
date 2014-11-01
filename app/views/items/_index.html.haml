@@ -5,6 +5,5 @@
         .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
           .item-content
             .item-name= item.name
-            .item-price
-              = "$#{item.price}"
-              .item-description= link_to "By #{item.user.name}", user_path(item.user)
+            %hr
+            .view2= link_to "By #{item.user.name}", user_path(item.user)

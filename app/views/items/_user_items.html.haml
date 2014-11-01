@@ -5,9 +5,8 @@
         .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
           .item-content
             .item-name= item.name
-            .item-price
-              = "$#{item.price}"
-              .view= link_to "View details", user_item_path(@user, item), :remote => true
+            %hr
+            .view= link_to "View details", user_item_path(@user, item), :remote => true
             - if current_user == @user
               .item-actions
                 .edit-item= link_to "Edit Item", edit_user_item_path(current_user, item), method: :get, :remote => true, :class => "edit"

@@ -2,12 +2,12 @@
   .sale-container
     .header Sales
 
-    .header= "Total sales so far: $#{Sale.total(@sales)}"
+    .header= "Total sales so far: $#{Sale.total(@user.sales)}"
 
-    .header= "Sales in: #{Sale.sold_to(@sales)}"
+    .header= "Sales in: #{Sale.sold_to(@user.sales)}"
 
 
-    - @sales.each do |sale|
+    - @user.sales.each do |sale|
       .sale
         .item{:id => "item-#{sale.item.id}", :style => "background-image: url(#{sale.item.img});"}
         .create_time= "Sold at: #{Time.at(sale.create_time).strftime("%m/%d/%Y")}"

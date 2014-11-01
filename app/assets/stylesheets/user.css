@@ -310,8 +310,9 @@ a:hover {
 }
 
 .item-name {
-  font-size: 35px;
-  margin-top: 4%;
+  font-size: 45px;
+  margin-top: 25%;
+  margin-bottom: 0;
 }
 
 .item-name2 {
@@ -335,8 +336,25 @@ a:hover {
   margin: 4%;
 }
 
+hr {
+  width: 80%;
+  display: block;
+  margin-top: -20%;
+  margin-bottom: 0;
+  margin-left: auto;
+  border-color: #dab222;
+}
+
 .view {
   font-size: 35px;
+  margin-top: -20%;
+}
+
+.view2 {
+  margin-top: -10%;
+  font-size: 35px;
+  line-height: 10%;
+  margin-bottom: 40%;
 }
 
 .item-description {
