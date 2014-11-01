@@ -5,9 +5,8 @@
     - redirect_uri = url_for(:controller => 'users', :action => 'oauth', :user_id => @user.id, :host => request.host_with_port)
     = link_to "Click here to create your ", @user.wepay_authorization_url(redirect_uri)
 
+%img(src="#{@user.background}" id="bg" alt="")
 .page
-  #bg
-    %img(src="#{@user.background}" alt="")
   #artist
     .user-image= image_tag @user.image
     .name= @user.name
