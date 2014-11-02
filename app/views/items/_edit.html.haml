@@ -5,5 +5,5 @@
     = f.input :description
     / = f.simple_fields_for :images do |i|
     /   = i.input :image, :input_html => { :multiple => true }, required: false
-    / = f.submit
+    = f.submit
   = link_to "Delete Item", user_item_path(current_user, @item), method: :delete, data: { confirm: 'Are you sure?' }
