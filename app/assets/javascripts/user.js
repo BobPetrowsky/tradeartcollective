@@ -30,14 +30,16 @@ $( document ).ready(function() {
         });
       }
   });
-  // var t = setInterval(function(){
-  //   if ($(".item-images ul li").length > 1) {
-  //     $(".item-images ul").animate({marginLeft:-575},1000,function(){
-  //       $(this).find("li:last").after($(this).find("li:first"));
-  //       $(this).css({marginLeft:0});
-  //     })
-  //   }
-  // },5000);
+  var t = setInterval(function(){
+    if ($(".item-images ul li").length > 1) {
+      $(".item-images ul").animate({marginLeft: "-70%"},1000,function() {
+        $(this).find("li:eq(1)").hide();
+        $(this).find("li:last").after($(this).find("li:first"));
+        $(this).css({marginLeft:0});
+        $(this).find("li:eq(1)").fadeIn( "slow" );
+      })
+    }
+  },5000);
 
   $( document ).on("mouseover", function() {
     $( ".exit" ).on("click", function() {
