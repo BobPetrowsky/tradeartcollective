@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def new
     @item = Item.new
+    @image = @item.images.build
   end
 
   def index
@@ -16,6 +17,9 @@ class ItemsController < ApplicationController
     @user = User.find(params[:user_id])
     @item = @user.items.new(item_params)
     if @item.save
+      params["item"]["images_attributes"]["0"]["image"].each do |image|
+        @image = @item.images.create!(:image => image, :item_id => @item.id)
+      end
       flash[:notice] = 'Item added!'
       redirect_to @user
     else
@@ -75,6 +79,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:user_id, :name, :price, :img, :description)
+    params.require(:item).permit(:user_id, :name, :price, :description, image_attributes: [:id, :item_id, :image])
   end
 end

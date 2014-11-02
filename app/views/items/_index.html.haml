@@ -2,7 +2,7 @@
   .item-index
     -@items.shuffle.each do |item|
       -if item.sold == false
-        .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
+        .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.images[0].image});"}
           .item-content
             .item-name= item.name
             %hr

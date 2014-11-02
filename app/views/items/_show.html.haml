@@ -3,7 +3,8 @@
   .item-name2= @item.name
   .item-images
     %ul
-      %li{ :style => "background-image: url(#{@item.img});" }
+      -@item.images.each do |image|
+        %li{ :style => "background-image: url(#{image.image});" }
   .item-price= "$#{@item.price}"
   - if @user.has_wepay_account? && current_user != @user
     .buy= link_to "Buy", "/users/#{@user.id}/#{@item.id}/buy", :class => "buy"

@@ -2,7 +2,7 @@
   - if @user.has_items_for_sale? == true
     -@user.items.each do |item|
       -if item.sold != true
-        .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.img});"}
+        .item{:id => "item-#{item.id}", :style => "background-image: url(#{item.images.first.image});"}
           .item-content
             .item-name= item.name
             %hr

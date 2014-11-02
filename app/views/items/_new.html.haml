@@ -2,6 +2,7 @@
   = simple_form_for([current_user, @item]) do |f|
     = f.input :name
     = f.input :price
-    = f.input :img, as: :file
     = f.input :description
+    = f.simple_fields_for :images do |i|
+      = i.input :image, :input_html => { :multiple => true }
     = f.submit

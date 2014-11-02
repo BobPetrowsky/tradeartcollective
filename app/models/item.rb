@@ -1,6 +1,8 @@
 class Item < ActiveRecord::Base
   belongs_to :user
   has_one :sale
+  has_many :images
+  accepts_nested_attributes_for :images
 
   monetize :price
 
@@ -9,12 +11,9 @@ class Item < ActiveRecord::Base
               :mapping => %w(price cents),
               :converter => Proc.new { |value| value.respond_to?(:to_money) ? value.to_money : Money.empty }
 
-  mount_uploader :img, ItemUploader
-
   validates :user, presence: true
   validates :name, presence: true
   validates :price, presence: true
-  validates :img, presence: true
 
   # creates a checkout object using WePay API for this farmer
   def create_checkout(redirect_uri)

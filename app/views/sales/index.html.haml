@@ -9,7 +9,7 @@
 
     - @user.sales.each do |sale|
       .sale
-        .item{:id => "item-#{sale.item.id}", :style => "background-image: url(#{sale.item.img});"}
+        .item{:id => "item-#{sale.item.id}", :style => "background-image: url(#{sale.item.images[0].image});"}
         .create_time= "Sold at: #{Time.at(sale.create_time).strftime("%m/%d/%Y")}"
         .short_description="Description: #{sale.short_description}"
         .long_description="Item Description: #{sale.long_description}"
